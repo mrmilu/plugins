@@ -1,3 +1,8 @@
+## 0.5.0
+
+* **Breaking change**. Changed architecture and method names to be able to differentiate between
+the dynamic link which opened the app and links clicked during app execution (active and background).
+
 ## 0.4.0+2
 
 * Add missing template type parameter to `invokeMethod` calls.
