@@ -1,3 +1,8 @@
+## 6.0.0
+
+* **Breaking Change** Separated onLaunch to an specific method to be able to retrieve launch
+  message in a synchronous way.
+
 ## 5.0.3
 
 * Update Dart code to conform to current Dart formatter.
