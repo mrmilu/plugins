@@ -81,8 +81,8 @@ class FirebaseDynamicLinks {
       case "onLinkError":
         final Map<dynamic, dynamic> data =
             call.arguments.cast<dynamic, dynamic>();
-        final OnLinkErrorData e = OnLinkErrorData._(
-            data['code'], data['message'], data['details']);
+        final OnLinkErrorData e =
+            OnLinkErrorData._(data['code'], data['message'], data['details']);
         return _onLinkError(e);
     }
   }
