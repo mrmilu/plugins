@@ -118,10 +118,10 @@ class MyHomeWidgetState extends State<MyHomeWidget> {
   @override
   void initState() {
     super.initState();
-    this.initDynamicLinks();
+    _initDynamicLinks();
   }
 
-  void initDynamicLinks() async {
+  void _initDynamicLinks() async {
     final PendingDynamicLinkData data = await FirebaseDynamicLinks.instance.getLaunchLink();
     final Uri deepLink = data?.link;
 
@@ -137,7 +137,7 @@ class MyHomeWidgetState extends State<MyHomeWidget> {
           Navigator.pushNamed(context, deepLink.path);
         }
       },
-      onLinkError: (OnLinkErrorException e) async {
+      onLinkError: (OnLinkErrorData e) async {
         print('onLinkError');
         print(e.message);
       }

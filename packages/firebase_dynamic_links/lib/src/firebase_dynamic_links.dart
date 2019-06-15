@@ -5,7 +5,7 @@
 part of firebase_dynamic_links;
 
 typedef Future<dynamic> OnLinkSuccessHandler(PendingDynamicLinkData linkData);
-typedef Future<dynamic> OnLinkErrorHandler(OnLinkErrorException error);
+typedef Future<dynamic> OnLinkErrorHandler(OnLinkErrorData error);
 
 /// Firebase Dynamic Links API.
 ///
@@ -81,7 +81,7 @@ class FirebaseDynamicLinks {
       case "onLinkError":
         final Map<dynamic, dynamic> data =
             call.arguments.cast<dynamic, dynamic>();
-        final OnLinkErrorException e = OnLinkErrorException._(
+        final OnLinkErrorData e = OnLinkErrorData._(
             data['code'], data['message'], data['details']);
         return _onLinkError(e);
     }
@@ -141,8 +141,8 @@ class PendingDynamicLinkDataIOS {
   final String minimumVersion;
 }
 
-class OnLinkErrorException {
-  OnLinkErrorException._(this.code, this.message, this.details);
+class OnLinkErrorData {
+  OnLinkErrorData._(this.code, this.message, this.details);
 
   final String code;
 
